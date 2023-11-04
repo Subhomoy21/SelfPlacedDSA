@@ -1,3 +1,3 @@
 # SelfPlacedDSA
-All Coding Concept
-Uploading daily java code blocks with some dsa concepts.
+Data structure and algorithms help in understanding the nature of the problem at a deeper level and thereby a better understanding of the world.
+
