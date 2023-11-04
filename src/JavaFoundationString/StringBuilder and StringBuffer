@@ -1,0 +1,66 @@
+Methods common to 3 classes i.e., String class, StringBuilder class and StringBuffer class:
+
+length(): This returns the number of characters the StringBuilder object contains. The length of the sequence of characters currently represented by this StringBuilder object is returned by this method.
+charAt(index): This is used to return the character at the specified index of String contained by StringBuilder Object. The index value should lie between 0 and length()-1.
+indexOf(str): This is used to return the index within the String for the first occurrence of the passed substring as the parameter. If substring str is not present then -1 is returned.
+indexOf(str, fromIndex): This is used to return the index within the String for the first occurrence of passed substring as a parameter starting at the specified index ‘fromIndex’. If substring str is not present then -1 is returned.
+lastIndexOf(str): This is used to return the index within the String for the last occurrence of the passed substring as a parameter. The last occurrence of the empty string “ ” is considered to occur at the index value this.length(). If substring str is not present then -1 is returned.
+lastIndexOf(str, fromIndex): This is used to return the index of a substring within the original String. But the search for the substring begins from the 0th index to the index fromIndex. In this new range (0-fromIndex), now the last occurrence of the substring is found and the starting index is returned by this function. If the substring isn’t found in that range, -1 is returned.
+compareTo(sb): This method compares two strings lexicographically.
+substring(beginIndex): This is used to return a substring starting from beginIndex and extends to the end of this sequence. The string returned by this method contains all characters from the beginIndex to the end of the old sequence.
+substring(beginIndex, lastIndex): This is used to return a substring starting from beginIndex and extends to the index lastIndex-1 of this sequence. The string returned by this method contains all characters from beginIndex to index lastIndex-1 of the old sequence.
+chars(): This method returns a stream of int zero-extending the char values from this sequence.
+
+
+Methods present only in the StringBuilder class and StringBuffer class:
+
+
+append(x): This is used to append the string representation of some argument to the sequence. There are 13 ways/forms in which the append() method can be used by passing various types of arguments. Here the x can be of boolean, int, char, String, float, or Object type.
+insert(Offset, x): This method inserts the string representation of the given data type at the given offset position in a StringBuffer. Here the x can be of boolean, int, char, String, float, or Object type.
+setCharAt(index, c): This is used to set the character at the position index passed as c. This method changes the old sequence to represent a new sequence that is identical to the old sequence where the only difference is a new character c is present at the position index. The index argument must be greater than or equal to 0, and less than the length of the String contained by the StringBuilder object.
+reverse(): This is used to reverse the characters in the StringBuilder. The method helps the character sequence to be replaced by the reverse of the sequence. The reverse is in place and hence a very costly operation.
+deleteCharAt(index): This removes the character at the given index from the String contained by StringBuilder. This method takes an index as a parameter that represents the index of the char we want to remove and returns the remaining String as a StringBuilder Object. This StringBuilder is shortened by one char after the application of this method.
+delete(start, end): This removes the characters starting from index start to index end-1 from String contained by StringBuilder. This method takes two indexes as a parameter first start represents the index of the first character and endIndex represents the index after the last character of the substring to be removed from String contained by StringBuilder and returns the remaining String as StringBuilder Object.
+capacity(): This is used to return the current capacity of the StringBuilder object. The capacity is the amount of storage available to insert new characters.
+replace(start, end, str): This is used to replace the characters in a substring of this sequence with characters in the specified String. The substring begins at the specified index start and extends to the character at index end – 1 or to the end of the sequence if no such character exists. At first, the characters of the substring are removed and the string passed as parameters are inserted in the place of those characters.
+
+// Java code to illustrate the internal
+// working of StringBuilder
+// and StringBuffer class
+class GfG
+{
+    public static void main (String[] args) {
+        // StringBuilder or StringBuffer class
+        StringBuilder sb = new StringBuilder("dcba");
+
+        // Reversing the StringBuilder
+        sb.reverse();
+        System.out.println(sb);
+
+        // Appending to sb
+        sb.append("efg");
+        System.out.println(sb);
+
+        // Replacing the character at 1
+        // with h
+        sb.setCharAt(1, 'h');
+        System.out.println(sb);
+
+        // Delete the characters at 0, 1
+        sb.delete(0, 2);
+        System.out.println(sb);
+
+        // Inserts "efg" at 1
+        sb.insert(1, "efg");
+        System.out.println(sb);
+    }
+}
+
+
+Output:
+
+abcd
+abcdefg
+ahcdefg
+cdefg
+cefgdefg
