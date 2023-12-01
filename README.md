@@ -1,5 +1,8 @@
 # SelfPlacedDSA
-Some sites which may help you:
+
+Lets Explore the corporate world together  : https://www.linkedin.com/in/subhomoy-das-34a29021a
+
+MIGHT HELP YOU :
 
 1.For Basics to advance(Java) : https://www.geeksforgeeks.org/java/
 
