@@ -19,12 +19,19 @@ public class ExceptionHandling {
         catch(FileNotFoundException ex)
         {
             System.out.println("File not Found caught...........................");
+            /*
+            if the file cannot be found the exception is caught in this catch-block.
+            in some situation you may need to perform some clean up operations or open another file instead.
+             */
         }
+        //OPTIONAL
+        // always run regardless of exception status
         finally{
-
             System.out.println("finally-block runs regardless of the state of exception");
         }
-
+        //OPTIONAL
+        //after try catch finally
+        // will not be executed in case of an uncaught exception....
         System.out.println("After try-catch-finally, life goes on");
     }
 }
