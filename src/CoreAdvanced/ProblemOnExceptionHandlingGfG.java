@@ -3,6 +3,16 @@ import java.util.Scanner;
 //Given two integers (positive , negative or even 0) say a and b.
 // Find the minimum value of a$b where $ is any arithmetic operation like multiply(*), Divide(/), Addition(+), Substraction(-).
 
+//Example:
+//
+//
+//Input:
+//a = 5, b = -5
+//Output:
+//-25
+//Explanation: 5+(-5) = 0; 5-(-5) = 10;
+//5*(-5) = -25; 5/(-5) = -1;
+//Minimum of all is 5*(-5) = -25.
 class TestClass
 {
     int a, b, Min;
