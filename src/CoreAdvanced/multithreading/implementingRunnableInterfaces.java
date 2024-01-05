@@ -1,4 +1,4 @@
-package multithreading;
+package CoreAdvanced.multithreading;
 //Thread creation by implementing the Runnable Interface
 //We create a new class which implements java.lang.Runnable interface and override run() method.
 // Then we instantiate a Thread object and call start() method on this object.
