@@ -2,14 +2,18 @@ package multithreading;
 //Thread creation by implementing the Runnable Interface
 //We create a new class which implements java.lang.Runnable interface and override run() method.
 // Then we instantiate a Thread object and call start() method on this object.
-class test implements Runnable{
-    public void run(){
-        System.out.println("In test thread..");
+class Test1 implements Runnable
+{
+    public void run()
+    {
+        System.out.println("In Test Thread");
     }
 }
 public class implementingRunnableInterfaces {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws InterruptedException {
+        Thread t = new Thread(new Test1());
+        t.start();
+        System.out.println("In Main Thread");
     }
 }
 //Thread Class vs Runnable Interface
