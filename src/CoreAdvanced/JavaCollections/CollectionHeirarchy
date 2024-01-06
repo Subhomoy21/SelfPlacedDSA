@@ -1,0 +1,91 @@
+Interfaces which extend the Collections Interface
+
+1. Iterable Interface: This is the root interface for the entire collection framework. The collection interface extends
+the iterable interface. Therefore, inherently, all the interfaces and classes implement this interface.
+The main functionality of this interface is to provide an iterator for the collections.
+They can be of two types:
+Iterator function: Gives iterator over a collection which can be used to traverse a collection or remove elements from the collection.
+Iterator  iterator();
+for-each method: This takes action as an argument and performs the function on every item of the collection.
+
+2. Collection Interface: This interface contains all the basic methods which every collection
+ has like adding the data into the collection, removing the data, clearing the data, etc.
+ All these methods are implemented in this interface because these methods are implemented by all
+ the classes irrespective of their style of implementation. This has most of the functions declared in it.
+ Although iterator is the root of the hierarchy in name, it is the collection interface that is actually the root
+  of the framework due to its importance of containing most of the functionalities.
+
+ 3. List Interface: This is a child interface of the collection interface.
+ This interface is dedicated to the data of the list type in which we can store all the ordered collection of the objects.
+ This deals with the index or position-specific functions like getting an element or setting an element.
+ It deals with the arrays and list type operations.
+ArrayList: ArrayList provides us with dynamic arrays in Java.
+ The size of an ArrayList is increased automatically if the collection grows or shrinks if the objects are removed from the collection.
+LinkedList: LinkedList class is an implementation of the DoublyLinkedList data structure.
+Vector: A vector provides us with dynamic arrays in Java. This is a legacy class.
+It is a thread-safe class. This is not recommended to be used in a single-threaded environment as it might cause extra overheads.
+ However, to overcome this in Vectors place one can readily use ArrayList.
+Stack: Stack class models and implements the Stack data structure. The class is based on the basic principle of last-in-first-out.
+This is a legacy class. This inherits from a Vector class. It is also a thread-safe class.
+This is not recommended to be used in a single-threaded environment as it might cause extra overheads.
+ However, to overcome this in Vectors place one can readily use ArrayDeque.
+
+
+4. Queue Interface: As the name suggests, a queue interface maintains the FIFO(First In First Out) order similar to a real-world queue line.
+ This interface is dedicated to storing all the elements where the order of the elements matter.
+ This interface, in addition, supports extra functions for queue addition and removal for eg, poll() to
+ remove an item or offer() to add an item.
+ Priority Queue: The PriorityQueue is based on the priority heap. It is used when the objects are supposed to
+  be processed based on the priority. It is known that a queue follows the First-In-First-Out algorithm, but sometimes
+   the elements of the queue are needed to be processed according to the priority and this class is used in these cases.
+LinkedList: LinkedList class implements Queue data-structure as well. As the name suggests, a queue interface maintains
+the FIFO(First In First Out) order similar to a real-world queue line.
+ArrayDeque: ArrayDeque class which is implemented in the collection framework provides us with a way to apply resizable-array.
+ This is a special kind of array that grows and allows users to add or remove an element from both sides of the queue.
+
+
+5. Deque Interface: Deque, also known as a double-ended queue, is a data structure where we can add and remove the elements from both the ends of the queue. This interface extends the queue interface. Additional functions like offerFirst(), offerLast(), pollFirst(), pollLast() etc. The class which implements this interface are:
+LinkedList: This is going to be a linked list implementation.
+ArrayDeque: This is going to be an array implementation.
+
+6. Set Interface: A set is an unordered collection of objects in which duplicate values cannot be stored.
+ This set interface is implemented by various classes like HashSet, TreeSet, LinkedHashSet, etc.
+ Since all the subclasses implement the set, we can instantiate a set object with any of these classes.
+ This collection is used when we wish to avoid the duplication of the objects and wish to store only the unique objects.
+HashSet: The HashSet class is an inherent implementation of the hash table data structure or Hashing.
+The objects that we insert into the HashSet do not guarantee to be inserted in the same order.
+The objects are inserted based on their hashcode.
+TreeSet: The TreeSet class is an implementation of the Self-balancing binary tree like red-black tree.
+The ordering of the elements is maintained by a set using their natural ordering.
+LinkedHashSet: A LinkedHashSet is very similar to a HashSet. The difference is that this uses a doubly linked list to
+store the data and retains the ordering of the elements.
+
+7.SortedSet Interface: This interface is very similar to the set interface. The only difference is that this interface
+ has extra methods that maintain the ordering of the elements. The sorted set interface extends the set interface and
+ is used to handle the data which needs to be sorted. The class which implements this interface is TreeSet.
+
+
+ 8. Map: Unlike a set which is just a collection of keys, a map is a data structure which supports the key-value pair
+ mapping for the data. It is mainly used in the scenarios where Students are needed to be searched or removed or added
+ according to the roll numbers or in item-frequency scenario where items are stored along with there frequencies.
+ Functions like containsKey(), containsValue().
+ HashMap: HashMap uses a technique called Hashing. It provides the basic implementation of the Map interface of Java.
+ It stores the data in (Key, Value) pairs. To access a value in a HashMap, we must know its key.
+ LinkedHashMap: A LinkedHashMap is very similar to a HashSet. The difference is that this uses a doubly
+ linked list to store the data and retains the ordering of the elements.
+
+
+9. SortedMap Interface: SortedMap is an interface in collection framework. This interface extends Map
+interface and provides a total ordering of its elements (elements can be traversed in sorted order of keys).
+ It is implemented by TreeMap.
+
+Important Points:
+All these collections can be imported code using:
+import java.util.*
+However single classes can also be imported by replacing * with the class name. For eg,
+import java.util.ArrayList
+import java.util.LinkedList
+......
+All these collections and interfaces do not support primitive types for eg, int, char etc. However,
+they all support the non-primitive types like the Integer, Character etc called the Wrapper classes.
+Its advantage is that on the failure of operation instead of throwing errors the non-primitive types return a Null value.
