@@ -17,10 +17,12 @@ public class powerOfTwo {
     // efficient solution
     static boolean isPowOf2(int n){
         if(n==0){
-
+        return false;
         }
+        return ((n & (n-1))==0);
     }
     public static void main(String[] args) {
         System.out.println(isPowOfTwo(64));
+        System.out.println(isPowOf2(64));
     }
 }
