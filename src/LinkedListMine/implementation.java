@@ -49,6 +49,15 @@ public class implementation {
                 head = temp;
             }
         }
+        void insertAt(int data,int i){
+            Node t = new Node(data); // new node jo insert hoga!
+            Node temp = head;
+            for (int j = 0; j < i-1; j++) {
+                temp = temp.next;
+            }
+            t.next = temp.next;
+            temp.next = t;
+        }
     }
     public static void main(String[] args) {
         linkedList l = new linkedList();
@@ -62,6 +71,9 @@ public class implementation {
         l.display();
         System.out.println();
         l.insertAtBegin(65);
+        l.display();
+        System.out.println();
+        l.insertAt(6,2);
         l.display();
     }
 }
