@@ -28,7 +28,7 @@ public class implementation {
                 temp = temp.next;
             }
         }
-        int size(){
+        int size(){ // 0(n)
             int size = 0;
             Node temp = head;
             while(temp!=null){
@@ -66,6 +66,13 @@ public class implementation {
             t.next = temp.next;
             temp.next = t;
         }
+        int getElement(int idx){
+            Node temp = head;
+            for (int i = 0; i < idx; i++) {
+                temp = temp.next;
+            }
+           return temp.data;
+        }
     }
     public static void main(String[] args) {
         linkedList l = new linkedList();
@@ -88,6 +95,6 @@ public class implementation {
         l.display();
         System.out.println();
         System.out.println(l.tail.data);
-
+        System.out.println(l.getElement(2));
     }
 }
