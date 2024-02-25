@@ -52,6 +52,14 @@ public class implementation {
         void insertAt(int data,int i){
             Node t = new Node(data); // new node jo insert hoga!
             Node temp = head;
+            if (i == size()){
+                insertAtEnd(data);
+                return;
+            }
+            if(i == 0){
+                insertAtBegin(data);
+                return;
+            }
             for (int j = 0; j < i-1; j++) {
                 temp = temp.next;
             }
@@ -73,7 +81,13 @@ public class implementation {
         l.insertAtBegin(65);
         l.display();
         System.out.println();
-        l.insertAt(6,2);
+        l.insertAt(6,2);  // but ek bug hai agar last ele ko access karna chaha nhi hoga!
         l.display();
+        System.out.println();
+        l.insertAt(10,7);// data jo print hoga tail ka age wala print hoga!
+        l.display();
+        System.out.println();
+        System.out.println(l.tail.data);
+
     }
 }
