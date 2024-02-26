@@ -11,6 +11,7 @@ public class implementation {
     public static class linkedList{ // yeh ek entire data structure hai!
         Node head = null;
         Node tail = null;
+        int size = 0;
         void insertAtEnd(int val){
             Node temp = new Node(val);
              if(head==null){ // empty list
@@ -20,6 +21,7 @@ public class implementation {
                  tail.next = temp;
              }
             tail = temp;
+             size ++;
         }
         void display(){
             Node temp = head;
@@ -28,15 +30,15 @@ public class implementation {
                 temp = temp.next;
             }
         }
-        int size(){ // 0(n)
-            int size = 0;
-            Node temp = head;
-            while(temp!=null){
-                temp = temp.next;
-                size++;
-            }
-            return size;
-        }
+//        int size(){ // 0(n)
+//            int size = 0;
+//            Node temp = head;
+//            while(temp!=null){
+//                temp = temp.next;
+//                size++;
+//            }
+//            return size;
+//        }
         void insertAtBegin(int val){
             Node temp = new Node(val);
             if(head == null){ // empty list
@@ -48,11 +50,12 @@ public class implementation {
                 temp.next = head;
                 head = temp;
             }
+            size++;
         }
         void insertAt(int data,int i){
             Node t = new Node(data); // new node jo insert hoga!
             Node temp = head;
-            if (i == size()){
+            if (i == size){
                 insertAtEnd(data);
                 return;
             }
@@ -65,6 +68,7 @@ public class implementation {
             }
             t.next = temp.next;
             temp.next = t;
+            size++;
         }
         int getElement(int idx){
             Node temp = head;
@@ -72,6 +76,22 @@ public class implementation {
                 temp = temp.next;
             }
            return temp.data;
+        }
+        void deleteAt(int i){
+            if(i == 0){
+                head = head.next;
+                size--;
+                return;
+            }
+            Node temp = head;
+            for (int j = 0; j < i-1; j++) {
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            if(i == size-1){
+                tail = temp;
+            }
+            size--;
         }
     }
     public static void main(String[] args) {
@@ -81,7 +101,7 @@ public class implementation {
         l.insertAtEnd(5);
         l.insertAtEnd(6);
         l.display();
-        System.out.println("\n" + l.size());
+        System.out.println("\n" + l.size);
         l.insertAtEnd(12);
         l.display();
         System.out.println();
@@ -96,5 +116,7 @@ public class implementation {
         System.out.println();
         System.out.println(l.tail.data);
         System.out.println(l.getElement(2));
+        l.deleteAt(3);
+        l.display();
     }
 }
