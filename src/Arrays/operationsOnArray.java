@@ -44,5 +44,6 @@ public class operationsOnArray {
         {
             System.out.print(arr[i]+" ");
         }
+
     }
 }
