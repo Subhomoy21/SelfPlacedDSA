@@ -28,6 +28,8 @@ public class secLargestInArray {
         }
         return res;
     }
+    // 2nd one
+
     public static void main(String[] args) {
         int arr[] = {5,20,12,20,10};
         System.out.println(secLargest(arr));
