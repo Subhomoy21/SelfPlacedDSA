@@ -33,6 +33,18 @@ public class findingNthFromEnd {
         }
         return temp;
     }
+    static Node findingNthNodeopt(Node head , int n){
+        Node slow = head;
+        Node fast = head;
+        for (int i = 0; i < n; i++) {
+            fast = fast.next;
+        }
+        while(fast!=null){
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
 
     public static void main(String[] args) {
          Node a = new Node(5);
@@ -48,5 +60,7 @@ public class findingNthFromEnd {
         e.next = f;
         Node temp = findingNthNodeBrute(a,3);
         System.out.println(temp.data);
+        Node temp1 = findingNthNodeopt(a,3);
+        System.out.println(temp1.data);
     }
 }
