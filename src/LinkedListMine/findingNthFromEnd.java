@@ -33,11 +33,11 @@ public class findingNthFromEnd {
         }
         return temp;
     }
-    static Node findingNthNodeopt(Node head , int n){
+    static Node findingNthNodeopt(Node head , int n){ // one traversal
         Node slow = head;
         Node fast = head;
         for (int i = 0; i < n; i++) {
-            fast = fast.next;
+            fast = fast.next; // nth times fast pointer ko indicate karne ke liye!
         }
         while(fast!=null){
             slow = slow.next;
