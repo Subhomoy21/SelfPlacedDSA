@@ -14,11 +14,25 @@ public class removeDuplicatesFromSortedArray {
             }
         }
         for (int i = 0; i < res; i++) {
-
+                arr[i] = temp[i];
         }
         return res;
     }
     public static void main(String[] args) {
+        int arr[] = {10, 20, 20, 30, 30, 30};
+        int n  = arr.length;
+        System.out.println("Before Removal");
+        for(int i = 0; i < n; i++)
+        {
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+        n = remDuplicates(arr);
+        System.out.println("After Removal");
+        for(int i = 0; i < n; i++)
+        {
+            System.out.print(arr[i]+" ");
+        }
 
     }
 }
