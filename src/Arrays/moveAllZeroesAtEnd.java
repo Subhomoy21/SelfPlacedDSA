@@ -19,13 +19,27 @@ public class moveAllZeroesAtEnd {
             }
         }
     }
-    // efficient solution
+    // efficient solution(using two pointers)
+    static void zeroesAtEnd(int [] arr){
+        int n = arr.length;
+        int i = 0;
+        for (int j = 0; j < n; j++) {
+            if(arr[j] != 0){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                i++;
+            }
+        }
+    }
 
     public static void main(String[] args) {
         int arr[] = {5,2,0,2,0,0,4,5};
         moveZeros(arr);
         System.out.println(Arrays.toString(arr));
        // swap(4,5);
+        zeroesAtEnd(arr);
+        System.out.println(Arrays.toString(arr));
 
     }
 }
