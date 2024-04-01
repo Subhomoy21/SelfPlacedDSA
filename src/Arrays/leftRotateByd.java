@@ -36,12 +36,31 @@ public class leftRotateByd {
             arr[n-d+i] = temp[i];
         }
     }
+    // more better
+    static void reverse(int [] arr, int low, int  high){
+        int n = arr.length;
+        while(low<high){
+            int temp = arr[low];
+            arr[low] = arr[high];
+            arr[high] = temp;
+            low++;
+            high--;
+        }
+    }
+    static void optirotateByD(int []arr , int d){
+        int n  = arr.length;
+        reverse(arr,0,d-1);
+        reverse(arr, d ,n-1);
+        reverse(arr,0,n-1);
+    }
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5};
         displayArr(arr);
 //        leftRotateByd(arr,2);
 //        displayArr(arr);
-        leftRotateBetter(arr,2);
+//        leftRotateBetter(arr,2);
+//        displayArr(arr);
+        optirotateByD(arr,2);
         displayArr(arr);
     }
 }
