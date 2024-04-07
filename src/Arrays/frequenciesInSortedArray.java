@@ -19,7 +19,7 @@ public class frequenciesInSortedArray {
         }
     }
     public static void main(String[] args) {
-        int [] arr = {10,10,10,2,2,25,25,24,23};
+        int [] arr = {2,2,2,2,5,5,5,6,7,8,10,10,10};
         frequenciesInSortedArray(arr);
     }
 }
