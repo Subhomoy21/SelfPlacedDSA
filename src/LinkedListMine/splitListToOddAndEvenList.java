@@ -30,16 +30,16 @@ public class splitListToOddAndEvenList {
         while(temp != null){
             if(temp.data % 2 == 0){
                 // even
-                //Node a = new Node(temp.data);
-                tempe.next = temp;
-                tempe = temp;
+                Node a = new Node(temp.data);
+                tempe.next = a;
+                tempe = a;
                 temp = temp.next;
             }
             else{
                 // odd
-                //Node b = new Node(temp.data);
-                tempo.next = temp;
-                tempo = temp;
+                Node b = new Node(temp.data);
+                tempo.next = b;
+                tempo = b;
                 temp = temp.next;
             }
         }
