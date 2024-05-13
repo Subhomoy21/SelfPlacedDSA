@@ -19,6 +19,7 @@ public class TrappingRainWater {
         return res;
     }
     // another process
+    // O(n)
     static int getWater2(int [] arr){
         int n = arr.length;
         int res = 0;
