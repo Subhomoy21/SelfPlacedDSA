@@ -72,7 +72,5 @@ public class findingIntersection2ll {
         Node temp = getIntersectionNode(a,a1);
         System.out.println(temp.data);
 
-
-
     }
 }
